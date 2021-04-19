@@ -1,0 +1,40 @@
+Barber: Gus Fring
+Name: Andrey. Number phone: 792384723466234.Date and time visit 12/12/21 23:56
+Barber: Walter White
+Name: sadffd. Number phone: 43.Date and time visit 54
+Barber: Gus Fring
+Name: trtttqwf. Number phone: 1221.Date and time visit 2323
+Barber: Walter White
+Name: yuuuuyyu. Number phone: 2222.Date and time visit 1111
+Barber: Walter White
+Name: yuuuuyyu. Number phone: 2222.Date and time visit 1111
+Barber: Gus Fring
+Name: Andrey. Number phone: 098765434.Date and time visit 24.12.21 12:30
+Barber: Jessie Pinkman
+Name: qwertty. Number phone: 1234.Date and time visit 77777
+Barber: Gus Fring
+Name: Masha. Number phone: +735643616841.Date and time visit 12/12/21 23:56
+Barber: Jessie Pinkman
+Name: eee. Number phone: 5555.Date and time visit 777
+Barber: Gus Fring
+Name: rrrrrrrrrrrrrrrrr. Number phone: 8888888888888.Date and time visit 99999999999999999
+Barber: Walter White
+Name: SSSSS. Number phone: 22222222222222.Date and time visit 4444444444444444444444 color hair #dbadff
+Barber: Walter White
+Name: . Number phone: eee.Date and time visit eeee color hair #5484ed
+Barber: Walter White
+Name: . Number phone: eee.Date and time visit eeee color hair #a4bdfc
+Barber: Walter White
+Name: . Number phone: eee.Date and time visit eeee color hair #46d6db
+Barber: Jessie Pinkman
+Name: eeee. Number phone: tttt.Date and time visit yyyyy color hair #fbd75b
+Barber: Walter White
+Name: rrrt. Number phone: tttt.Date and time visit yyyyy color hair #a4bdfc
+Barber: Walter White
+Name: . Number phone: .Date and time visit qqq color hair #7bd148
+Barber: Walter White
+Name: . Number phone: .Date and time visit qqq color hair #7bd148
+Barber: Walter White
+Name: qqq. Number phone: 333.Date and time visit 211221 color hair #7bd148
+Barber: Walter White
+Name: ddd. Number phone: 444.Date and time visit 222 color hair #7bd148

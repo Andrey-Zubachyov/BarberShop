@@ -5,11 +5,19 @@ require 'sinatra/reloader'
 require 'sqlite3'
 
 # инициализируем в сенатре базу данных -> configure do
+
+
+def get_db
+	# функция возвращения таблицы
+	return SQLite3::Database.new 'barbershop.db'
+end
+
+# будет выполнена инициализация при внесении изменений в запросе не при обновлении страницы
 configure do
-	# db - глобальная переменная 
-	@db = SQLite3::Database.new 'barbershop.db'
-	# команда для создания таблицы
-	@db.execute 'CREATE TABLE IF NOT EXISTS
+	# db переменная 
+	db = get_db
+	
+	db.execute 'CREATE TABLE IF NOT EXISTS
 				"Users"
 				(
 				"id" INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,10 +42,10 @@ get '/visit' do
 end
 
 post '/visit' do
-	@barbers	= params[:barbers]
 	@user_name	= params[:user_name]
-	@phone		= params[:phone]	
+	@phone		= params[:phone]
 	@time_visit	= params[:time_visit]
+	@barbers	= params[:barbers]
 	@color		= params[:color]
 	# вывод об ошибке в случае отсуствия записи имени через хэш
 	hh = {
@@ -51,41 +59,20 @@ post '/visit' do
 	if @error != ""
 		return erb :visit
 	end
-	# проходим по хэшу через each
-	# hh.each do |key, value|
-	#	if params[key] == ""
-	#		# переменной error присваиваем значение по ключу
-	#		@error = hh[key]
-	#		return erb :visit
-	#	end
-	# end
 
-	f = File.open "./public/user.txt", "a"
-	f.write "Barber: #{@barbers}\nName: #{@user_name}. Number phone: #{@phone}.Date and time visit #{@time_visit} color hair #{@color}\n"
-	f.close
+	db = get_db
+	db.execute 'insert into
+		Users
+		(
+			name,
+			phone,
+			datestamp,
+			barber,
+			color
+		)
+		values (?, ?, ?, ?, ?)', [@user_name, @phone, @time_visit, @barbers, @color]
+
 	erb "Здравствуйте #{@user_name}! Вы записаны к #{@barbers} на #{@time_visit} Выбранный Вами цвет окраски: #{@color}"
+
 end
 
-get '/contacts' do
-	erb :contacts
-end
-
-post '/contacts' do
-	@email 			= params[:email]
-	@text_message 	= params[:text_message]
-
-	hh = {
-		:email => "Введите Ваш email",
-		:text_message => "Вы не ввели сообщение"
-	}
-
-	@error = hh.select {|key,_| params[key] == ""}.values.join(" ")
-	if @error != ""
-		return erb :contacts
-	end
-
-	m = File.open "./public/contacts.txt", "a"
-	m.write "Email: #{@email}\n. Message: #{@text_message}\n"
-	m.close
-	erb "Ваше сообщение отправлено!"
-end

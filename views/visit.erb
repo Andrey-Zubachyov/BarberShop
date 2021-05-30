@@ -5,6 +5,7 @@ $(function() {
   // тут я могу написать любой javascript код, который исполнится
   // после загрузки страницы
   $('#color').simplecolorpicker();
+  $('#datetimepicker').datetimepicker();
 });
 </script>
 <form action="/visit" method="POST" role="form">
@@ -20,7 +21,7 @@ $(function() {
 
   <div class="form-group">
     <label>Укажите время записи</label>
-    <input name="time_visit" type="text" class="form-control" placeholder="Введите дату и вермя записи" value="<%= @time_visit %>">
+    <input id="datetimepicker" name="time_visit" type="text" class="form-control" placeholder="Введите дату и вермя записи" value="<%= @time_visit %>">
   </div>
 
 
